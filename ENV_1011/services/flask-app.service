@@ -1,0 +1,13 @@
+[Unit]
+Description=Flask Application with OpenTelemetry
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/script/python
+ExecStart=/usr/bin/python3.11 ./app/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

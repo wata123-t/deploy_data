@@ -1,0 +1,12 @@
+apiVersion: 1
+
+providers:
+  - name: 'My Python Metrics Dashboard'
+    orgId: 1
+    folder: 'Custom Dashboards'     # 👈 Grafana画面上でこのフォルダ内に表示されます
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards/my-dashboards # 👈 コンテナ内のパスを指定
+

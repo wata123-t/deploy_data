@@ -1,0 +1,15 @@
+[Unit]
+Description=Locust Load Testing Service
+After=network.target flask-app.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/script/python
+ExecStart=/usr/local/bin/locust -f locustfile.py --host=http://localhost:5000 --headless
+StandardOutput=append:/opt/script/python/locust.log
+StandardError=append:/opt/script/python/locust.log
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
